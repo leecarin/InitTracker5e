@@ -10,7 +10,6 @@ btn.addEventListener("click", function () {
     let ac_td = document.createElement("td");
     let currentHP_td = document.createElement("td");
     let maxHP_td = document.createElement("td");
-    let addBtn_td = document.createElement("td");
 
     let initInput = document.createElement("input");
     updateInputAttributes(initInput, "number", "init", "init");
@@ -49,4 +48,4 @@ function updateInputAttributes(element, type, classAttr, nameAttr, min = 0) {
     element.name = nameAttr;
 }
 
-//Sort table rows by initiative order
+//TODO: Sort table rows by initiative order

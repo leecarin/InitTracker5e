@@ -1,4 +1,4 @@
-let btn = document.querySelector("button");
+let btn = document.querySelector("#add-row");
 let table = document.querySelector("#table-body");
 
 //Add a row when + button clicked
@@ -10,6 +10,7 @@ btn.addEventListener("click", function () {
     let ac_td = document.createElement("td");
     let currentHP_td = document.createElement("td");
     let maxHP_td = document.createElement("td");
+    let addBtn_td = document.createElement("td");
 
     let initInput = document.createElement("input");
     updateInputAttributes(initInput, "number", "init", "init");

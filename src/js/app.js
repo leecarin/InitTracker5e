@@ -59,12 +59,12 @@ addBtn.addEventListener("click", function () {
     removeBtn.onclick = function () {
         deleteRow(row);
     }
-
 });
 
 function updateInputAttributes(element, type, classAttr, nameAttr, min = 0) {
     if (type === "number") {
         element.min = min;
+        element.value = 0;
     }
     element.type = type;
     element.classList.add(classAttr);
@@ -74,7 +74,36 @@ function updateInputAttributes(element, type, classAttr, nameAttr, min = 0) {
 function deleteRow(tr) {
     console.log(`Row index is ${tr.rowIndex}`);
     let idx = tr.rowIndex;
-    table.deleteRow(idx - 1);
+    table.deleteRow(idx - 1);   //to avoid running out of bounds
 }
 
-//TODO: Sort table rows by initiative order
+//TODO: Sort table rows by initiative order - to debug, values inside input not being read
+function sortTable(table) {
+    let rows = table.rows;
+    let swap;
+    switchFlag = true;
+
+    while (switchFlag) {
+        switchFlag = false;
+
+        for (i = 1; i < rows.length; i++) {
+            swap = false;
+            first = rows[i].getElementsByTagName("td")[0];
+            second = rows[i + 1].getElementsByTagName("td")[0];
+
+            if (first.value > second.value) {
+                swap = true;
+                break;
+            }
+        }
+
+        if (swap) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switchFlag = true;
+        }
+    }
+}
+
+let sort = document.querySelector("#sort-btn");
+sort.onclick = sortTable(table);
+

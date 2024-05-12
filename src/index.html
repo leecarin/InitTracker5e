@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<link
+			rel="stylesheet"
+			href="../styles/sakura-ink.css"
+		/>
+		<title>InitTracker 5e</title>
+	</head>
+	<body>
+		<h1>Dungeons & Dragons Initiative Tracker</h1>
+
+		<h2>Initative Order</h2>
+
+		<main>
+			<table>
+				<thead>
+					<tr>
+						<th>Initiative</th>
+						<th>Name</th>
+						<th>AC</th>
+						<th>Current HP</th>
+						<th>Maximum HP</th>
+					</tr>
+				</thead>
+
+				<tr>
+					<td>
+						<input
+							type="number"
+							id="init"
+							name="init"
+							min="0"
+						/>
+					</td>
+					<td>
+						<input
+							type="text"
+							id="name"
+							name="name"
+						/>
+					</td>
+					<td>
+						<input
+							type="number"
+							id="armour-class"
+							name="armour-class"
+							min="0"
+						/>
+					</td>
+					<td>
+						<input
+							type="number"
+							id="current-hp"
+							name="current-hp"
+							min="0"
+						/>
+					</td>
+					<td>
+						<input
+							type="number"
+							id="total-hp"
+							name="total-hp"
+							min="0"
+						/>
+					</td>
+					<td>
+						<button><i class="fa-solid fa-square-plus"></i></button>
+					</td>
+				</tr>
+			</table>
+		</main>
+
+		<script
+			src="https://kit.fontawesome.com/706a79fd40.js"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>

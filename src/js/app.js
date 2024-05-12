@@ -10,6 +10,8 @@ btn.addEventListener("click", function () {
     let ac_td = document.createElement("td");
     let currentHP_td = document.createElement("td");
     let maxHP_td = document.createElement("td");
+    let dmg_td = document.createElement("td");
+    let remove_td = document.createElement("td");
 
     let initInput = document.createElement("input");
     updateInputAttributes(initInput, "number", "init", "init");
@@ -35,6 +37,20 @@ btn.addEventListener("click", function () {
     updateInputAttributes(maxHPInput, "number", "max-hp", "max-hp");
     maxHP_td.appendChild(maxHPInput);
     row.appendChild(maxHP_td);
+
+    let dmgInput = document.createElement("input");
+    updateInputAttributes(dmgInput, "number", "dmg", "dmg");
+    dmg_td.appendChild(dmgInput);
+    row.appendChild(dmg_td);
+
+    //TODO: add click event on trash button to remove row
+    let removeBtn = document.createElement("button");
+    let trashIcon = document.createElement("i");
+    trashIcon.classList.add("fa-solid", "fa-trash-can");
+    removeBtn.appendChild(trashIcon);
+    remove_td.appendChild(removeBtn);
+    row.appendChild(remove_td);
+
 
     table.appendChild(row);
 });

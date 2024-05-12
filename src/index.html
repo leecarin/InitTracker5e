@@ -20,7 +20,7 @@
 		<main>
 			<table id="init-trk-container">
 				<thead id="table-head">
-					<tr>
+					<tr id="header-row">
 						<th>Initiative</th>
 						<th>Name</th>
 						<th>AC</th>
@@ -36,7 +36,7 @@
 				</thead>
 
 				<tbody id="table-body">
-					<tr>
+					<tr class="input-row">
 						<td>
 							<input
 								type="number"
@@ -85,7 +85,10 @@
 							/>
 						</td>
 						<td>
-							<button>
+							<button
+								class="rm-btn"
+								id="first-rm-btn"
+							>
 								<i class="fa-solid fa-trash-can"></i>
 							</button>
 						</td>

@@ -88,7 +88,7 @@ function sortTable(table) {
 
         for (i = 1; i < rows.length; i++) {
             swap = false;
-            first = rows[i].getElementsByTagName("td")[0];
+            first = rows[i].getElementsByTagName("td")[0];  //to fix to get input values instead
             second = rows[i + 1].getElementsByTagName("td")[0];
 
             if (first.value > second.value) {

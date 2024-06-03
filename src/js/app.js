@@ -55,17 +55,23 @@ addBtn.addEventListener("click", function () {
 
     table.appendChild(row);
 
-    //Remove row if trash can button clicked
+    // Add damage calculation on change with debouncing
+    let debounceTimer;
+    dmgInput.addEventListener("input", function () {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            updateCurrentHP(row);
+        }, 500); // Adjust the delay as necessary
+    });
+
+    // //Remove row if trash can button clicked
     removeBtn.onclick = function () {
         deleteRow(row);
     }
+
 });
 
-function updateInputAttributes(element, type, classAttr, nameAttr, min = 0) {
-    if (type === "number") {
-        element.min = min;
-        element.value = 0;
-    }
+function updateInputAttributes(element, type, classAttr, nameAttr) {
     element.type = type;
     element.classList.add(classAttr);
     element.name = nameAttr;
@@ -77,33 +83,42 @@ function deleteRow(tr) {
     table.deleteRow(idx - 1);   //to avoid running out of bounds
 }
 
-//TODO: Sort table rows by initiative order - to debug, values inside input not being read
-function sortTable(table) {
-    let rows = table.rows;
-    let swap;
-    switchFlag = true;
 
-    while (switchFlag) {
-        switchFlag = false;
+function sortTable() {
+    let rows = Array.from(table.querySelectorAll("tr"));
+    rows.sort((rowA, rowB) => {
+        let initA = parseFloat(rowA.querySelector(".init").value);
+        let initB = parseFloat(rowB.querySelector(".init").value);
+        return initB - initA;
+    });
 
-        for (i = 1; i < rows.length; i++) {
-            swap = false;
-            first = rows[i].getElementsByTagName("td")[0];  //to fix to get input values instead
-            second = rows[i + 1].getElementsByTagName("td")[0];
-
-            if (first.value > second.value) {
-                swap = true;
-                break;
-            }
-        }
-
-        if (swap) {
-            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-            switchFlag = true;
-        }
-    }
+    rows.forEach(row => table.appendChild(row));
 }
 
-let sort = document.querySelector("#sort-btn");
-sort.onclick = sortTable(table);
+function updateCurrentHP(row) {
+    let currentHPInput = row.querySelector(".current-hp");
+    let dmgInput = row.querySelector(".dmg");
 
+    let currentHP = parseFloat(currentHPInput.value) || 0;
+    let damageTaken = parseFloat(dmgInput.value) || 0;
+
+    // Calculate new HP
+    let newHP = currentHP - damageTaken;
+
+    // Update the current HP value
+    currentHPInput.value = newHP;
+}
+
+//Event Listeners for Existing Content
+let sortBtn = document.querySelector("#sort-btn");
+sortBtn.addEventListener("click", sortTable);
+
+document.querySelectorAll(".dmg").forEach(input => {
+    let debounceTimer;
+    input.addEventListener("input", function () {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            updateCurrentHP(this.closest("tr"));
+        }, 500); // Adjust the delay as necessary
+    });
+});

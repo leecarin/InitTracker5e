@@ -55,13 +55,13 @@ addBtn.addEventListener("click", function () {
 
     table.appendChild(row);
 
-    // Add damage calculation on change with debouncing
+    //Wait for user to stop typing
     let debounceTimer;
     dmgInput.addEventListener("input", function () {
         clearTimeout(debounceTimer);
         debounceTimer = setTimeout(() => {
             updateCurrentHP(row);
-        }, 500); // Adjust the delay as necessary
+        }, 500);
     });
 
     // //Remove row if trash can button clicked
@@ -119,6 +119,6 @@ document.querySelectorAll(".dmg").forEach(input => {
         clearTimeout(debounceTimer);
         debounceTimer = setTimeout(() => {
             updateCurrentHP(this.closest("tr"));
-        }, 500); // Adjust the delay as necessary
+        }, 500);
     });
 });

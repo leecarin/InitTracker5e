@@ -1,0 +1,123 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+
+/* Body */
+body {
+    background: #272932;
+    color: #f1f2eb;
+    font-family: Dosis, Geneva, Tahoma, sans-serif;
+    margin: 4em;
+    padding: 0;
+}
+
+/* Headers */
+h1{
+    color:#b9e3c6;
+    font-size: 30pt;
+}
+
+h2, h3, h4, h5, h6 {
+    color: #f1f2eb;
+    font-size: xx-large;
+}
+
+/* Links */
+a {
+    color: #1c7293;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+button {
+    background-color: #1c7293;
+    color: #b9e3c6;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+}
+
+button:hover {
+    background-color: #b9e3c6;
+    color: #272932;
+}
+
+/* Form elements */
+input[type="text"],
+input[type="number"] {
+    background-color: #f1f2eb;
+    color: #272932;
+    border: 1px solid #1c7293;
+    padding: 6px 10px; /* Adjusted padding */
+    border-radius: 5px; /* Rounded corners */
+    font-family: Dosis, Geneva, Tahoma, sans-serif;
+}
+
+input[type="text"] {
+    width: 75%;
+}
+
+input[type="number"] {
+    width: 4em;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-width: 3px;
+    border-color: #1c7293;
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px 5px; /* Adjusted padding */
+    border-bottom: 1px solid #f1f2eb;
+    width: auto;
+}
+
+th {
+    background-color: #272932;
+    color: #b9e3c6;
+    text-align: left;
+    font-size: x-large;
+}
+
+/* Alerts */
+.alert {
+    background-color: #1c7293;
+    color: #272932;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.alert-success {
+    background-color: #1c7293;
+}
+
+.alert-danger {
+    background-color: #ff5722;
+}
+
+.alert-warning {
+    background-color: #ffc107;
+}
+
+.alert-info {
+    background-color: #2196f3;
+}
+
+#sort-btn {
+    margin-top: 2em;
+    font-size: large;
+    font-family: Dosis, Geneva, Tahoma, sans-serif;
+}

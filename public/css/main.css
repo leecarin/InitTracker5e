@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Dosis:wght@200..800&family=Jersey+10&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+h1{
+    font-family: "Arsenal SC", "Dosis";
+    font-size: 30pt;
+}
+
+.navbar {
+    font-family: "Arsenal SC", "Dosis";
+    font-size: 20pt;
+}
+
+.navbar-brand {
+    font-family: 20pt;
+}
+
+body {
+    font-family: "Arsenal SC", "Dosis";
+    font-size: large;
+}

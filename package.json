@@ -1,0 +1,18 @@
+{
+  "name": "inittracker_fullstack",
+  "version": "1.0.0",
+  "description": "Full stack web application, initiative tracker for D&D 5e",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Carine Lee",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "express": "^4.19.2",
+    "express-handlebars": "^8.0.1",
+    "handlebars": "^4.7.8",
+    "path": "^0.12.7"
+  }
+}
